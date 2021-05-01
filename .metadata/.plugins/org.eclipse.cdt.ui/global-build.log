@@ -1,0 +1,24 @@
+11:30:04 **** Incremental Build of configuration Debug for project 000 ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "000.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/keith/Documents/Embeded/000/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="000.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 000.elf
+ 
+arm-none-eabi-objdump -h -S  000.elf  > "000.list"
+arm-none-eabi-objcopy  -O binary  000.elf  "000.bin"
+arm-none-eabi-size   000.elf 
+   text	   data	    bss	    dec	    hex	filename
+    876	     32	   1568	   2476	    9ac	000.elf
+Finished building: default.size.stdout
+ 
+Finished building: 000.bin
+Finished building: 000.list
+ 
+ 
+11:30:08 **** Incremental Build of configuration Debug for project 000 ****
+make -j12 all 
+arm-none-eabi-size   000.elf 
+   text	   data	    bss	    dec	    hex	filename
+    876	     32	   1568	   2476	    9ac	000.elf
+Finished building: default.size.stdout
+ 
