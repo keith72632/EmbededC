@@ -18,6 +18,7 @@
  */
 
 #include <stdint.h>
+#include <stdio.h>
 
 volatile uint32_t *clk = (uint32_t *)0x40023830;
 volatile uint32_t *mode = (uint32_t *)0x40020c00;
@@ -81,6 +82,7 @@ int main(void)
 	//changeAccessLevelUpriv();
 	*outA |= (1<<8);
 
+	printf("Entering while loop\n");
 
 	while(1){
 	if(*inA & 0x01){
